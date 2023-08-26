@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/classic-man/static/css/main.ac443cab.css",
+    "main.js": "/classic-man/static/js/main.7d5f6fb6.js",
+    "index.html": "/classic-man/index.html",
+    "main.ac443cab.css.map": "/classic-man/static/css/main.ac443cab.css.map",
+    "main.7d5f6fb6.js.map": "/classic-man/static/js/main.7d5f6fb6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ac443cab.css",
+    "static/js/main.7d5f6fb6.js"
+  ]
+}
