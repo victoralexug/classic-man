@@ -1,0 +1,130 @@
+const data = {
+    homeData: [
+        {
+            id:17,
+            img: '../img/home.png',
+            first: 'NEW WATCH',
+            title: 'COLLECTIONS B720',
+            button: 'Buy wireless headphones',
+            desc: 'Latest arrival of the new imported watches of the B720 series, with a modern and resistant design.',
+            price: 1245,
+            link: 'Discover',
+        },
+    ],
+    
+    featuredProducts: [
+        {
+            id:18,
+            img: '../img/featured1.png',            
+            title: 'Jazzmaster',
+            desc: 'Havit H633BT Wireless Headphone - Bluetooth Stereo Headset.',
+            price: 1050,
+        },
+        {
+            id:19,
+            img: '../img/featured2.png',           
+            title: 'Ingersoll',
+            desc: 'Havit H633BT Wireless Headphone - Bluetooth Stereo Headset.',
+            price: 250,
+        },
+        {
+            id:20,
+            img: '../img/featured3.png',
+            title: 'COD Men',
+            desc: 'Havit H633BT Wireless Headphone - Bluetooth Stereo Headset.',
+            price: 890,
+        }
+    ],
+
+    productData: [
+         {
+            id:8,
+            img: '../img/product1.png',
+            title: 'Spirit rose',
+            desc: 'Havit H633BT Wireless Headphone - Bluetooth Stereo Headset.',
+            price: 1050,
+        },
+        {
+            id:9,
+            img: '../img/product2.png',
+            title: 'Khaki pilot',
+            desc: 'Havit H633BT Wireless Headphone - Bluetooth Stereo Headset.',
+            price: 250,
+        },
+        {
+            id:10,
+            img: '../img/product3.png',
+            title: 'Jubilee black',
+            desc: 'Havit H633BT Wireless Headphone - Bluetooth Stereo Headset.',
+            price: 890,
+        },
+        {
+            id:11,
+            img: '../img/product4.png',
+            title: 'Fosil me3',
+            desc: 'Havit H633BT Wireless Headphone - Bluetooth Stereo Headset.',
+            price: 1050,
+        },
+        {
+            id:12,
+            img: '../img/product5.png',
+            title: 'Duchen',
+            desc: 'Havit H633BT Wireless Headphone - Bluetooth Stereo Headset.',
+            price: 250,
+        },
+        {
+            id:13,
+            img: '../img/product6.png',
+            title: 'JUBILEE',
+            desc: 'Havit H633BT Wireless Headphone - Bluetooth Stereo Headset.',
+            price: 890,
+        }
+    ],
+
+    newProducts: [
+        {
+            id:1,
+            img: '../img/new1.png',            
+            title: 'Longines rose',
+            desc: 'Havit H633BT Wireless Headphone - Bluetooth Stereo Headset.',
+            price: 250,
+        },
+        {
+            id:2,
+            img: '../img/new2.png',            
+            title: 'Jazzmaster',
+            desc: 'Havit H633BT Wireless Headphone - Bluetooth Stereo Headset.',
+            price: 1150,
+        },
+        {
+            id:3,
+            img: '../img/new3.png',            
+            title: 'Dreyfuss gold',
+            desc: 'Havit H633BT Wireless Headphone - Bluetooth Stereo Headset.',
+            price: 750,
+        },
+        {
+            id:4,
+            img: '../img/new4.png',            
+            title: 'Portuguese rose',
+            desc: 'Havit H633BT Wireless Headphone - Bluetooth Stereo Headset.',
+            price: 1590,
+        },
+        {
+            id:5,
+            img: '../img/product3.png',
+            title: 'Jubilee black',
+            desc: 'Havit H633BT Wireless Headphone - Bluetooth Stereo Headset.',
+            price: 890,
+        },
+        {
+            id:6,
+            img: '../img/product4.png',
+            title: 'Fosil me3',
+            desc: 'Havit H633BT Wireless Headphone - Bluetooth Stereo Headset.',
+            price: 1050,
+        }
+    ]
+}
+
+export default data;

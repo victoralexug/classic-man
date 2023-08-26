@@ -56,17 +56,17 @@
   }
 }
 
-@media screen and (min-width: 1124px) {
+/* @media screen and (min-width: 1124px) {
   :root {
     --biggest-font-size: 3.5rem;
     --h1-font-size: 2.25rem;
-    --h2-font-size: 1.9rem;
-    --h3-font-size: 1.65rem;
-    --normal-font-size: 1.35rem;
-    --small-font-size: 1.175rem;
-    --smaller-font-size: 1rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
   }
-}
+} */
 
 /*=============== BASE ===============*/
 * {
@@ -671,37 +671,6 @@ button {
 }
 
 /*=============== NEW ===============*/
-
-.marquee {
-  position: relative;
-  height: 400px;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-.new-container{
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-  border: 1px solid var(--border-color);
-}
-
-.track {
-  position: absolute;
-  white-space: nowrap;
-  will-change: transform;
-  animation: marquee 10s linear infinite alternate;
-  width: 300%;
-}
-.track:hover {
-  animation-play-state: paused;
-}
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
 .new__card {
   position: relative;
   text-align: center;
@@ -726,7 +695,7 @@ button {
 }
 
 .new__img {
-  height: 170px;
+  height: 215px;
   margin-bottom: var(--mb-1);
 }
 
@@ -902,16 +871,15 @@ button {
 }
 
 /*=============== CART ===============*/
-.cart-wrapper{
-  width: 100vw;
-  background: rgba(0, 0, 0, 0.5);
+.cart {
   position: fixed;
-  right: 0;
+  background-color: var(--body-color);
+  z-index: var(--z-fixed);
+  width: 100%;
+  height: 100%;
   top: 0;
-  bottom: 0;
-  overflow-x: scroll;
-  z-index: 100;
-  /* will-change: transform; */
+  right: 0;
+  padding: 3.5rem 2rem;
   animation: slideSection 1s ease;
 }
 
@@ -922,32 +890,6 @@ button {
   100%{
     transform: translateX(0%);
   }
-}
-
-.cart {
-  background-color: var(--body-color);
-  float: right;
-  padding: 3.5rem 2rem;
-}
- 
-.empty-cart{
-  float: right;
-  color: var(--title-color);
-  cursor: pointer;
-  margin-TOP: -58PX;
-}
-
-.cart-item-qty{
-  position: absolute;
-  font-size: 12px;
-  color: #eee;
-  background-color: #f02d34;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  text-align: center;
-  font-weight: 600;
-  z-index: 1;
 }
 
 .cart__title-center {
@@ -1051,8 +993,10 @@ button {
   font-weight: var(--font-medium);
 }
 
-
-
+/* Show cart */
+.show-cart {
+  right: 0;
+}
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
@@ -1268,11 +1212,11 @@ button {
 }
 
 /* For large devices */
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1024px) {
   .container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 90%;
+    max-width: 1024px;
   }
   
   .story__container,
@@ -1299,8 +1243,8 @@ button {
 }
 
 /* For large devices */
-@media screen and (min-width: 1200px) {
-  
+/* @media screen and (min-width: 1200px) {
+
   .home__img-bg {
     width: 680px;
     height: 880px;
@@ -1309,13 +1253,26 @@ button {
     width: 520px;
   }
   .home__social {
-    left: -5rem;
+    left: -2rem;
   }
   .home__data {
-    padding: 0 0 8rem 8rem;
+    padding: 0 0 8rem 10rem;
   }
 
-  .home__container {
-    column-gap: 4rem;
-  }  
-} 
+  .story__container {
+    padding-top: 3rem;
+  }
+  .story__img {
+    left: 5rem;
+    top: -5rem;
+  }
+
+  .testimonial__img {
+    right: 5rem;
+    top: 5rem;
+  }
+
+  .scrollup {
+    right: 3rem;
+  }
+}  */

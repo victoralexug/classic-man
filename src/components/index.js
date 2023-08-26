@@ -1,0 +1,12 @@
+export { default as Footer } from './Footer';
+export { default as Header } from './Header';
+export { default as Products } from './Products';
+export { default as Home } from './Home';
+export { default as New } from './New';
+export { default as Cart } from './Cart';
+export { default as Featured } from './Featured';
+export { default as Main } from './Main';
+export { default as Story } from './Story';
+export { default as Scroll } from './Scroll';
+export { default as Testimonials } from './Testimonials';
+export { default as Newsletter } from './Newsletter';
