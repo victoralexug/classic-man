@@ -151,6 +151,7 @@ button {
 .App{
   /*For animation dark mode*/
   transition: .4s;
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -242,7 +243,7 @@ button {
 
 .nav__toggle, 
 .nav__shop {
-  font-size: var(--h1-font-size);
+  font-size: var(--h2-font-size);
   cursor: pointer;
   margin: 0 10px;
 }
@@ -257,6 +258,7 @@ button {
     height: 100%;
     padding: 6rem 2rem 3.5rem;
     transition: .3s;
+    z-index: var(--z-fixed);
   }
 }
 
@@ -273,6 +275,7 @@ button {
   text-transform: uppercase;
   font-size: var(--h2-font-size);
   transition: .3s;
+  cursor: pointer;
 }
 
 .nav__link:hover {
@@ -300,6 +303,10 @@ button {
 
 /* Active link */
 .active-link {
+  color: var(--first-color);
+}
+
+a.active {
   color: var(--first-color);
 }
 
@@ -688,7 +695,21 @@ button {
 }
 @keyframes marquee {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to { transform: translateX(-70%); }
+}
+
+@media screen and (max-width: 420px) {
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-120%); }
+  }
 }
 
 .new__card {
@@ -964,6 +985,25 @@ button {
   align-items: center;
   column-gap: 1rem;
 }
+.empty-cart{
+  color: #fff;
+  background-color: #f02d34;
+  padding: 4px;
+}
+.empty-cart:hover {
+  box-shadow: 0 8px 32px var(--border-color);
+}
+
+.dark {
+  --first-color: hsl(220, 45%, 66%);
+  --button-color: hsl(0, 0%, 24%);
+  --button-color-alt: hsl(0, 0%, 28%);
+  --title-color: hsl(0, 0%, 95%);
+  --text-color: hsl(0, 0%, 75%);
+  --body-color: hsl(0, 0%, 12%);
+  --container-color: hsl(0, 0%, 16%);
+  --border-color: hsl(0, 0%, 20%);
+}
 
 .cart__box {
   background-color: var(--container-color);
@@ -990,6 +1030,7 @@ button {
 .cart__amount,
 .cart__amount-content{
   display: flex;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -998,7 +1039,7 @@ button {
 }
 
 .cart__amount-content{
-  column-gap: 1rem;
+  column-gap: 1.35rem;
 }
 
 .cart__amount-box {
@@ -1040,6 +1081,21 @@ button {
   font-weight: var(--font-medium);
 }
 
+.total-amount{
+  color: var(--first-color);
+}
+
+.check{
+  background-color: var(--first-color);
+}
+
+.check:hover {
+  box-shadow: 0 8px 32px var(--button-color-alt);
+}
+
+.checkout{
+  color: #fff;
+}
 
 
 
@@ -1076,6 +1132,11 @@ button {
     grid-template-columns: repeat(1, 180px);
     justify-content: center;
   }
+
+  .cart__box {
+    padding: .85rem 0rem;
+  }
+  
 }
 
 /* For medium devices */

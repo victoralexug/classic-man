@@ -12,7 +12,6 @@ const Home = (props) => {
     return (
         <div>
         <Toaster/>
-            <section className="home" id="home">
                 <div className="home__container container grid">
                     <div className="home__img-bg">
                         <img src={props.img} alt="" className="home__img" />
@@ -46,8 +45,6 @@ const Home = (props) => {
                         </div>
                     </div>
                 </div>
-            </section>
-
         </div>
     );
 };

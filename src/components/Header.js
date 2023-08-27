@@ -1,46 +1,53 @@
 import React, { useState } from 'react';
 import { useCart } from 'react-use-cart';
 import Cart from './Cart';
+import { Link, animateScroll as scroll } from "react-scroll";
 
 
 const Header = (props) => {
     const [showMenu, setshowMenu] = React.useState(false)
     const [showCart, setShowCart] = useState(false);
-    //const [activeLink, setActiveLink] = useState(false);
     const {
     totalUniqueItems,
     } = useCart()
-
-    // function toggleActiveLink(){
-    //     const nav__item = document.querySelector('nav__item')
-    //     // href === "#home" ? setActiveLink(true) : setActiveLink(false)
-    //     nav__item.href === "#home" ? console.log('clicked') : console.log('nothing')
-    // }
 
     
 
     return (
         <div >                      
             <header className={props.darkMode ? "dark header": "header"} id="header">
-                <div className={props.scrollTop ? "scroll-header": ""}>
+                <div className={scroll ? "scroll-header": ""}>
                 <nav className="nav container">
-                    <a href="/" className="nav__logo">
+                    <a href="#home" className="nav__logo">
                         The Classic Man
                     </a>
 
                     <div className={showMenu ? "nav__menu show-menu": "nav__menu"} id="nav-menu">
+
                         <ul className="nav__list">
                             <li className="nav__item">
-                                <a href="#home" className= "nav__link" onClick={() => setshowMenu(false)}>Home</a>
+                                <Link activeClass="active" to="home" spy={true} smooth={true} offset={-70} duration={100}
+                                    className= "nav__link" onClick={() => setshowMenu(false)}>Home
+                                </Link>
                             </li>
+
                             <li className="nav__item">
-                                <a href="#featured" className= "nav__link" onClick={() => setshowMenu(false)}>Featured</a>
+                                <Link activeClass="active" to="featured" spy={true} smooth={true} offset={-70} duration={500}
+                                    className= "nav__link" onClick={() => setshowMenu(false)}> Featured
+                                </Link>
                             </li>
+                            
                             <li className="nav__item">
-                                <a href="#products" className="nav__link" onClick={() => setshowMenu(false)}>Products</a>
+                                <Link activeClass="active" to="products" spy={true} smooth={true} offset={-70} duration={500}
+                                    className="nav__link" onClick={() => setshowMenu(false)}>Products
+                                </Link>
                             </li>
+                            
+                            
                             <li className="nav__item">
-                                <a href="#new" className="nav__link" onClick={() => setshowMenu(false)}>New</a>
+                                <Link activeClass="active" to="new" spy={true} smooth={true} offset={-70} duration={500}
+                                    className="nav__link" onClick={() => setshowMenu(false)}>New
+                                </Link>
                             </li>
                         </ul>
 

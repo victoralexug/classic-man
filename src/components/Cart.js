@@ -81,13 +81,13 @@ const Cart = ({ setShowCart, darkMode }) => {
                             
                             
                             <span className="cart__prices-item">{totalItems} Item{totalUniqueItems > 1 && "s"}</span>
-                            <span className="cart__prices-total">Total : ${cartTotal}</span>
+                            <span className="cart__prices-total">Total : <span className='total-amount'>$ {cartTotal}</span></span>
 
                         </div>
                         <br/>
                         <div>
-                            <button className="button button--small">
-                                <span  onClick={null}>Proceed to checkout</span>
+                            <button className="button--small check">
+                                <span className='checkout' onClick={null}>Proceed to checkout</span>
                             </button>
                         </div>
                     </div>
