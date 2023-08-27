@@ -18,7 +18,7 @@ const Testimonials = () => {
                                 <h3 className="testimonial__date">March 27. 2021</h3>
         
                                 <div className="testimonial__perfil">
-                                    <img src="../img/testimonial1.jpg" alt="" className="testimonial__perfil-img" />
+                                    <img src="https://victoralexug.github.io/the-classic-man/assets/img/testimonial3.jpg" alt="" className="testimonial__perfil-img" />
         
                                     <div className="testimonial__perfil-data">
                                         <span className="testimonial__perfil-name">Lee Doe</span>
@@ -39,7 +39,7 @@ const Testimonials = () => {
                                 <h3 className="testimonial__date">March 27. 2021</h3>
         
                                 <div className="testimonial__perfil">
-                                    <img src="../img/testimonial2.jpg" alt="" className="testimonial__perfil-img" />
+                                    <img src="https://victoralexug.github.io/the-classic-man/assets/img/testimonial2.jpg" alt="" className="testimonial__perfil-img" />
         
                                     <div className="testimonial__perfil-data">
                                         <span className="testimonial__perfil-name">Samantha Mey</span>
@@ -60,7 +60,7 @@ const Testimonials = () => {
                                 <h3 className="testimonial__date">March 27. 2021</h3>
         
                                 <div className="testimonial__perfil">
-                                    <img src="../img/testimonial3.jpg" alt="" className="testimonial__perfil-img" />
+                                    <img src="https://victoralexug.github.io/the-classic-man/assets/img/testimonial1.jpg" alt="" className="testimonial__perfil-img" />
         
                                     <div className="testimonial__perfil-data">
                                         <span className="testimonial__perfil-name">Raul Zaman</span>
@@ -80,7 +80,7 @@ const Testimonials = () => {
 
                     <div className="testimonial__images">
                         <div className="testimonial__square"></div>
-                        <img src="../img/testimonial.png" alt="" className="testimonial__img" />
+                        <img src="https://victoralexug.github.io/the-classic-man/assets/img/testimonial.png" alt="" className="testimonial__img" />
                     </div>
                 </div>
             </section>

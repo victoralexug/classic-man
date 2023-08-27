@@ -22,7 +22,7 @@ const Story = () => {
                     </div>
 
                     <div className="story__images">
-                        <img src="../img/story.png" alt="story" className="story__img" />
+                        <img src="https://victoralexug.github.io/the-classic-man/assets/img/story.png" alt="story" className="story__img" />
                         <div className="story__square"></div>
                     </div>
                 </div>
