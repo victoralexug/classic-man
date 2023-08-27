@@ -25,7 +25,9 @@ const Cart = ({ setShowCart, darkMode }) => {
                 <br/>
                 {isEmpty && (
                     <div className="empty-cart cart__title-center">
-                        <img src='../img/shopping-cart.png' alt='shopping-bag' />
+                        <img src='https://media.istockphoto.com/id/1206806317/vector/shopping-cart-icon-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=1RRQJs5NDhcB67necQn1WCpJX2YMfWZ4rYi1DFKlkNA='
+                         alt='shopping-bag' 
+                         />
                         <h3>Your shopping bag is empty</h3>
                         <br/>
                         <button
