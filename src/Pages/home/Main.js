@@ -6,17 +6,28 @@ import Products from './Products';
 import Testimonials from './Testimonials';
 import New from './New';
 import Newsletter from './Newsletter';
-import data from '../data';
-import Header from './Header';
+import Scroll from './Scroll';
+import data from '../../data';
 
 const Main = (props) => {
 
-    return (
-      <>
-        <Header darkMode={props.darkMode} toggleDarkMode={props.toggleDarkMode}/>
+  
+//   const sr = ScrollReveal({
+//     origin: 'top',
+//     distance: '60px',
+//     duration: 2000,
+//     delay: 200,
+//     //reset: true
+// });
 
-        <main className={props.darkMode ? "dark main" : "main"}>
-          
+    // sr.reveal('.section-title, .home__data, .success',{delay: 100}); 
+    // sr.reveal('.skill-item, .contact-info-item,.logos img, .service-item',{ interval: 100}); 
+    // sr.reveal('.project-button, .contact__input',{interval: 300});
+    // sr.reveal('.home__img, .contact__form',{delay: 500});
+
+
+    return (
+      <div>
           <section className="home" id="home">
               {data.homeData.map((item, index) => {
                 return(
@@ -78,8 +89,8 @@ const Main = (props) => {
           </section>
 
           <Newsletter />
-        </main>
-      </>
+          <Scroll darkMode={props.darkMode} />
+      </div>
     );
 };
 

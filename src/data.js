@@ -1,8 +1,10 @@
+
+
 const data = {
     homeData: [
         {
             id:17,
-            img: 'https://victoralexug.github.io/the-classic-man/assets/img/home.png',
+            img: 'https://victoralexug.github.io/the-classic-man/assets/img/home.png', 
             first: 'NEW WATCH',
             title: 'COLLECTIONS B720',
             button: 'Buy wireless headphones',

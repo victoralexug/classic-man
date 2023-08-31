@@ -1,5 +1,6 @@
 import { useCart } from "react-use-cart";
 import toast, { Toaster } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 const Featured = (props) => {
     const { addItem } = useCart();
@@ -13,9 +14,9 @@ const Featured = (props) => {
         <Toaster/>
             <article className="featured__card">
                 <span className="featured__tag">Sale</span>
-
-                <img src={props.img} alt={props.title} className="featured__img"/>
-
+                <Link to="/productdetails">
+                    <img src={props.img} alt={props.title} className="featured__img"/>
+                </Link>
                 <div className="featured__data">
                     <h3 className="featured__title">{props.title}</h3>
                     <span className="featured__price">${props.price}</span>

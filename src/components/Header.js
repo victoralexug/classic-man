@@ -1,24 +1,31 @@
 import React, { useState } from 'react';
 import { useCart } from 'react-use-cart';
-import Cart from './Cart';
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from 'react-router-dom';
 
 
 const Header = (props) => {
-    const [showMenu, setshowMenu] = React.useState(false)
-    const [showCart, setShowCart] = useState(false);
+    const [showMenu, setshowMenu] = useState(false)
+    const [navbar, setNavbar] = useState(false)
     const {
     totalUniqueItems,
     } = useCart()
 
-    
+   const changeNavbar = () => {
+    if(window.scrollY >= 10){
+        setNavbar(true)
+    }else{
+        setNavbar(false)
+    }
+   };
+
+   window.addEventListener('scroll',changeNavbar)
 
     return (
-        <div >                      
+        <div>                      
             <header className={props.darkMode ? "dark header": "header"} id="header">
-                <div className={scroll ? "scroll-header": ""}>
+                <div  className={navbar ? "scroll-header" : ""}>
                 <nav className="nav container">
-                    <a href="#home" className="nav__logo">
+                    <a href="/" className="nav__logo">
                         The Classic Man
                     </a>
 
@@ -26,27 +33,27 @@ const Header = (props) => {
 
                         <ul className="nav__list">
                             <li className="nav__item">
-                                <Link activeClass="active" to="home" spy={true} smooth={true} offset={-70} duration={100}
+                                <Link to="/"
                                     className= "nav__link" onClick={() => setshowMenu(false)}>Home
                                 </Link>
                             </li>
 
+                            {/* <li className="nav__item">
+                                <Link to="/productdetails"
+                                    className= "nav__link" onClick={() => setshowMenu(false)}> Products
+                                </Link>
+                            </li> */}
+                            
                             <li className="nav__item">
-                                <Link activeClass="active" to="featured" spy={true} smooth={true} offset={-70} duration={500}
-                                    className= "nav__link" onClick={() => setshowMenu(false)}> Featured
+                                <Link to="/aboutUs"
+                                    className="nav__link" onClick={() => setshowMenu(false)}>About Us
                                 </Link>
                             </li>
                             
-                            <li className="nav__item">
-                                <Link activeClass="active" to="products" spy={true} smooth={true} offset={-70} duration={500}
-                                    className="nav__link" onClick={() => setshowMenu(false)}>Products
-                                </Link>
-                            </li>
-                            
                             
                             <li className="nav__item">
-                                <Link activeClass="active" to="new" spy={true} smooth={true} offset={-70} duration={500}
-                                    className="nav__link" onClick={() => setshowMenu(false)}>New
+                                <Link to="/supportCenter"
+                                    className="nav__link" onClick={() => setshowMenu(false)}>Support Center
                                 </Link>
                             </li>
                         </ul>
@@ -60,13 +67,12 @@ const Header = (props) => {
                         <i className={props.darkMode ? "bx bx-sun change-theme": "bx bx-moon change-theme"} id="theme-button" onClick={props.toggleDarkMode}></i>
 
                         <div className="nav__shop" id="cart-shop">
-                            <i className='bx bx-shopping-bag' onClick={() => setShowCart(true)}>
-                            
-                            </i>
-                            <span className="cart-item-qty">{totalUniqueItems}</span>
+                            <Link to="/cart" className="nav__shop">
+                                <i className='bx bx-shopping-bag'>
+                                    <span className="cart-item-qty">{totalUniqueItems}</span>
+                                </i>
+                            </Link>
                         </div>
-
-                        {showCart && <Cart  showCart={showCart} setShowCart={setShowCart}/> }
 
                         <div className="nav__toggle" id="nav-toggle">
                             <i className='bx bx-grid-alt' onClick={() => setshowMenu(true)}></i>

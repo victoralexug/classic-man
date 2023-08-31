@@ -1,6 +1,7 @@
 
 import { useCart } from "react-use-cart";
 import toast, { Toaster } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 const New = (props) => {
     const { addItem } = useCart();
@@ -14,9 +15,9 @@ const New = (props) => {
         <Toaster/>
             <article className="new__card">
                 <span className="new__tag">New</span>
-
-                <img src={props.img} alt={props.title} className="new__img" />
-
+                <Link to="/productdetails">
+                <   img src={props.img} alt={props.title} className="new__img" />
+                </Link>
                 <div className="new__data">
                     <h3 className="new__title">{props.title}</h3>
                     <span className="new__price">${props.price}</span>

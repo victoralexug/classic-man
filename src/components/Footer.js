@@ -1,4 +1,7 @@
 
+import { Link } from 'react-router-dom';
+
+
 const Footer = (props) => {
     return (
         <div>
@@ -13,17 +16,20 @@ const Footer = (props) => {
                     </ul>
                 </div>
                 <div className="footer__content">
-                    <h3 className="footer__title">About Us</h3>
+                    <h3 className="footer__title">Customer Support</h3>
 
                     <ul className="footer__links">
+                        
                         <li>
-                            <a href="https://victoralexug.github.io/victoralexug/" className="footer__link">Support Center</a>
+                            <Link  className="footer__link" to="/aboutUs">
+                                About Us
+                            </Link>
                         </li>
+                        
                         <li>
-                            <a href="https://victoralexug.github.io/victoralexug/" className="footer__link">Customer Support</a>
-                        </li>
-                        <li>
-                            <a href="https://victoralexug.github.io/victoralexug/" className="footer__link">About Us</a>
+                            <Link  className="footer__link" to="/supportCenter">
+                                Support Center
+                            </Link>
                         </li>
                         <li>
                             <a href="https://victoralexug.github.io/victoralexug/" className="footer__link">Copy Right</a>
