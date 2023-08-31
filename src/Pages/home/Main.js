@@ -25,10 +25,12 @@ const Main = (props) => {
     // sr.reveal('.project-button, .contact__input',{interval: 300});
     // sr.reveal('.home__img, .contact__form',{delay: 500});
 
-
+   
     return (
       <div>
           <section className="home" id="home">
+                {/* <Home img={data.img} /> */}
+              
               {data.homeData.map((item, index) => {
                 return(
                     <Home img={item.img} first={item.first} title={item.title} link={item.link} desc={item.desc} price={item.price} item={item} key={index}/>
@@ -50,7 +52,7 @@ const Main = (props) => {
             </div>
           </section>
 
-          <Story />
+          <Testimonials />
           
           <section className="products section container" id="products">
             <h2 className="section__title">
@@ -66,7 +68,7 @@ const Main = (props) => {
             </div>
           </section>
 
-          <Testimonials />
+          <Story />
 
               
           <section className="new section container" id="new">

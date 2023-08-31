@@ -4,7 +4,11 @@ const data = {
     homeData: [
         {
             id:17,
-            img: 'https://victoralexug.github.io/the-classic-man/assets/img/home.png', 
+            img : [    
+                {url: 'https://victoralexug.github.io/the-classic-man/assets/img/home.png'},
+                {url: 'https://victoralexug.github.io/the-classic-man/assets/img/featured1.png'},
+                {url: 'https://victoralexug.github.io/the-classic-man/assets/img/featured2.png'},
+            ],
             first: 'NEW WATCH',
             title: 'COLLECTIONS B720',
             button: 'Buy wireless headphones',
@@ -12,7 +16,10 @@ const data = {
             price: 1245,
             link: 'Discover',
         },
+          
     ],
+    
+    
     
     featuredProducts: [
         {
