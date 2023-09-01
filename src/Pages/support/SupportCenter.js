@@ -1,16 +1,16 @@
 
-import data from '../data';
-import New from './home/New';
+import New from '../home/New';
+import data from '../../data';
 
-const AboutUs = () => {
+const SupportCenter = () => {
     return (
         <div>
 
             <section className=" section container" id="">
                 <h2 className="section__title">
-                    AboutUs
+                Support Center
                 </h2>
-                
+
             </section>
 
             <div className="new__container">
@@ -29,4 +29,4 @@ const AboutUs = () => {
     );
 };
 
-export default AboutUs;
+export default SupportCenter;

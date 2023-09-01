@@ -20,9 +20,9 @@ const Cart = ({ darkMode }) => {
     return (
         <div className="cart-wrapper" ref={cartRef}>       
             <div className={darkMode ? "dark cart": "cart"} id="cart">
-                <Link to="/">
+                <a href="/classic-man">
                 <i className='bx bx-x cart__close' id="cart-close"></i>
-                </Link>
+                </a>
                 
                 <h2 className="cart__title-center">My Cart</h2>
                 <br/>
@@ -33,11 +33,11 @@ const Cart = ({ darkMode }) => {
                          />
                         <h3>Your cart is empty!</h3>
                         <br/>
-                        <Link to="/">
+                        <a href="/classic-man">
                             <button type="button" className=" button--small check">
                                 START SHOPPING
                             </button>
-                        </Link>
+                        </a>
                         
                     </div>
                 )}

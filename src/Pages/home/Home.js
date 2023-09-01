@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useCart } from "react-use-cart";
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -13,7 +13,8 @@ const Home = ({img, first, title, price, link, item, desc}) => {
     }
 
     const gotoSlide = (slideIndex) => {
-        window.clearInterval(myInterval);
+        window.clearInterval(myInterval)
+        
         setCurrentIndex(slideIndex)
     }
 
@@ -34,12 +35,9 @@ var start = function(){
 
     myInterval = window.setInterval(function(){
 
-        // increment the step
         selectedStep++;
 
-        // check that we are not attempting to select a step that doesn't exist
         if ( selectedStep > totalSteps ){
-            // reset back to 1
             selectedStep = 0;
         }
 
@@ -50,6 +48,9 @@ var start = function(){
            
 };
 
+useEffect(() => {
+    start();
+}, [])
 
     return (
         <div>
@@ -57,7 +58,7 @@ var start = function(){
                 <div className="home__container container grid">
                     <div className="home__img-bg">
                         <div>
-                            <div style={slideStyles} className="home__img" onLoad={start()}></div>
+                            <div style={slideStyles} className="home__img"></div>
                             <div className="dotstylecontainer">
                                 {img.map((img, slideIndex) => (
                                     <div key={slideIndex} className="dotstyle" onClick={() => gotoSlide(slideIndex)}>.</div>

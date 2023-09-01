@@ -25,7 +25,7 @@ const Header = (props) => {
             <header className={props.darkMode ? "dark header": "header"} id="header">
                 <div  className={navbar ? "scroll-header" : ""}>
                 <nav className="nav container">
-                    <a href="/" className="nav__logo">
+                    <a href="/classic-man" className="nav__logo">
                         The Classic Man
                     </a>
 
@@ -33,9 +33,9 @@ const Header = (props) => {
 
                         <ul className="nav__list">
                             <li className="nav__item">
-                                <Link to="/"
+                                <a href="/classic-man"
                                     className= "nav__link" onClick={() => setshowMenu(false)}>Home
-                                </Link>
+                                </a>
                             </li>
 
                             {/* <li className="nav__item">
@@ -45,16 +45,16 @@ const Header = (props) => {
                             </li> */}
                             
                             <li className="nav__item">
-                                <Link to="/aboutUs"
+                                <a href="/aboutUs"
                                     className="nav__link" onClick={() => setshowMenu(false)}>About Us
-                                </Link>
+                                </a>
                             </li>
                             
                             
                             <li className="nav__item">
-                                <Link to="/supportCenter"
+                                <a href="/supportCenter"
                                     className="nav__link" onClick={() => setshowMenu(false)}>Support Center
-                                </Link>
+                                </a>
                             </li>
                         </ul>
 
@@ -67,11 +67,11 @@ const Header = (props) => {
                         <i className={props.darkMode ? "bx bx-sun change-theme": "bx bx-moon change-theme"} id="theme-button" onClick={props.toggleDarkMode}></i>
 
                         <div className="nav__shop" id="cart-shop">
-                            <Link to="/cart" className="nav__shop">
+                            <a href="/cart" className="nav__shop">
                                 <i className='bx bx-shopping-bag'>
                                     <span className="cart-item-qty">{totalUniqueItems}</span>
                                 </i>
-                            </Link>
+                            </a>
                         </div>
 
                         <div className="nav__toggle" id="nav-toggle">
