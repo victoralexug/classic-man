@@ -14,9 +14,9 @@ const Featured = ({ img, title, price, item }) => {
         <Toaster/>
             <article className="featured__card">
                 <span className="featured__tag">Sale</span>
-                <a href={`/productDetails/${item.id}`}>
+                <Link to={`/productDetails/${item.id}`}>
                     <img src={img} alt={title} className="featured__img"/>
-                </a>
+                </Link>
                 <div className="featured__data">
                     <h3 className="featured__title">{title}</h3>
                     <span className="featured__price">${price}</span>

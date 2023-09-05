@@ -26,7 +26,7 @@ const Main = () => {
                 Featured
             </h2>
             
-            <div className="featured__container grid">
+            <div className="products__container grid">
               {data.featuredProducts.map((item, index) => {
                 return(
                     <Featured img={item.img} title={item.title} desc={item.desc} price={item.price} item={item} key={index}/>

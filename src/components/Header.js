@@ -1,62 +1,71 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useCart } from 'react-use-cart';
 import { Link } from 'react-router-dom';
+import SearchBar from './SearchBar';
+import Login from './Login/Login';
 
 
 const Header = (props) => {
     const [showMenu, setshowMenu] = useState(false)
-    const [navbar, setNavbar] = useState(false)
+    const [showLogin, setshowLogin] = useState(false)
+
     const {
     totalUniqueItems,
     } = useCart()
 
+    const [searchResults, setSearchResults] = useState([]);
+  
+    const handleSearch = (query) => {
+        // Perform the search using the query (e.g., fetch data from an API)
+        // Update the searchResults state with the search results
+        // For simplicity, let's just log the query for now
+        console.log('Searching for:', query);
+    };
+
+    const [windowWidth, setWindowWidth] = useState(false)
+
    const changeNavbar = () => {
-    if(window.scrollY >= 10){
-        setNavbar(true)
+    if(window.innerWidth >= 767){
+        setWindowWidth(true)
     }else{
-        setNavbar(false)
+        setWindowWidth(false)
     }
    };
 
-   window.addEventListener('scroll',changeNavbar)
+   useEffect(() => {
+    changeNavbar();
+   }, [window.innerWidth])
 
     return (
         <div>                      
             <header className={props.darkMode ? "dark header": "header"} id="header">
-                <div  className={navbar ? "scroll-header" : ""}>
                 <nav className="nav container">
                     <a href="/classic-man" className="nav__logo">
                         The Classic Man
                     </a>
 
-                    <div className={showMenu ? "nav__menu show-menu": "nav__menu"} id="nav-menu">
+                    {windowWidth ? <SearchBar onSearch={handleSearch}/> : null}
 
+                    <div className={showMenu ? "nav__menu show-menu": "nav__menu"} id="nav-menu">
                         <ul className="nav__list">
                             <li className="nav__item">
-                                <a href="/classic-man"
+                                <Link to ="/classic-man"
                                     className= "nav__link" onClick={() => setshowMenu(false)}>Home
-                                </a>
-                            </li>
-
-                            {/* <li className="nav__item">
-                                <Link to="/productdetails"
-                                    className= "nav__link" onClick={() => setshowMenu(false)}> Products
                                 </Link>
-                            </li> */}
+                            </li>
                             
                             <li className="nav__item">
-                                <a href="/aboutUs"
+                                <Link to ="/aboutUs"
                                     className="nav__link" onClick={() => setshowMenu(false)}>About Us
-                                </a>
+                                </Link>
                             </li>
-                            
                             
                             <li className="nav__item">
-                                <a href="/supportCenter"
+                                <Link to ="/supportCenter"
                                     className="nav__link" onClick={() => setshowMenu(false)}>Support Center
-                                </a>
+                                </Link>
                             </li>
-                        </ul>
+                        </ul> 
 
                         <div className="nav__close" id="nav-close">
                             <i className='bx bx-x' onClick={() => setshowMenu(false)}></i>
@@ -64,23 +73,33 @@ const Header = (props) => {
                     </div>
 
                     <div className="nav__btns">
-                        <i className={props.darkMode ? "bx bx-sun change-theme": "bx bx-moon change-theme"} id="theme-button" onClick={props.toggleDarkMode}></i>
-
+                        
                         <div className="nav__shop" id="cart-shop">
-                            <a href="/cart" className="nav__shop">
-                                <i className='bx bx-shopping-bag'>
+                            <Link to ="/cart" className="nav__shop">
+                                <i className='bx bxs-cart-alt'>
                                     <span className="cart-item-qty">{totalUniqueItems}</span>
                                 </i>
-                            </a>
+                            </Link>
                         </div>
 
+                        <div className="nav__login">
+                            <i className='bx bx-user-circle' onClick={() => setshowLogin(true)}></i>
+                        </div>
+
+                        <div className="nav__login">
+                            <i className={props.darkMode ? "bx bx-sun change-theme": "bx bx-moon change-theme"} id="theme-button" onClick={props.toggleDarkMode}></i>
+                        </div>
+                        
                         <div className="nav__toggle" id="nav-toggle">
                             <i className='bx bx-grid-alt' onClick={() => setshowMenu(true)}></i>
                         </div>
+
                     </div>
                 </nav>
-                </div>
+                
+                {!windowWidth ? <SearchBar /> : null}
             </header>
+            {showLogin && <Login setshowLogin={setshowLogin}/>}
         </div>
     );
 };
