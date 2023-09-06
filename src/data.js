@@ -48,6 +48,34 @@ const data = {
             title: 'COD Men',
             desc: 'Havit H633BT Wireless Headphone - Bluetooth Stereo Headset.',
             price: 890,
+        },
+        {
+            id: "9",
+            img: 'https://victoralexug.github.io/the-classic-man/assets/img/product2.png',
+            title: "Grumpy Cat Poster",
+            desc: 'Havit H633BT Wireless Headphone - Bluetooth Stereo Headset.',
+            price: 250,
+        },
+        {
+            id: "10",
+            img: 'https://victoralexug.github.io/the-classic-man/assets/img/product3.png',
+            title: 'Jubilee black',
+            desc: 'Havit H633BT Wireless Headphone - Bluetooth Stereo Headset.',
+            price: 890,
+        },
+        {
+            id: "11",
+            img: 'https://victoralexug.github.io/the-classic-man/assets/img/product4.png',
+            title: 'Fosil me3',
+            desc: 'Havit H633BT Wireless Headphone - Bluetooth Stereo Headset.',
+            price: 1050,
+        },
+        {
+            id: "12",
+            img: 'https://victoralexug.github.io/the-classic-man/assets/img/product5.png',
+            title: 'Duchen',
+            desc: 'Havit H633BT Wireless Headphone - Bluetooth Stereo Headset.',
+            price: 250,
         }
     ],
 

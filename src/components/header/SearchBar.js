@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './header.css';
 
 function SearchBar({ onSearch }) {
   const [query, setQuery] = useState('');
@@ -19,7 +20,7 @@ function SearchBar({ onSearch }) {
       </div>
       <input
         type="text"
-        placeholder="       Search products, brands and categories"
+        placeholder="Search products, brands and categories"
         value={query}
         onChange={handleInputChange}
         className="search-input"

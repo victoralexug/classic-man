@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './index.css';
 import { CartProvider } from "react-use-cart";
 
-import Header from './components/Header';
-import Footer from './components/Footer'
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer'
 import Body from './components/Body';
 import { BrowserRouter as Router } from 'react-router-dom';
 

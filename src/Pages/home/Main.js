@@ -3,7 +3,7 @@ import Home from './Home';
 import Featured from './Featured';
 import Story from './Story';
 import Products from './Products';
-import Testimonials from './Testimonials';
+import MidBanner from './MidBanner';
 import New from './New';
 import Newsletter from './Newsletter';
 import Scroll from './Scroll';
@@ -21,21 +21,9 @@ const Main = () => {
             })}
           </section>
               
-          <section className="featured section container" id="featured">
-            <h2 className="section__title">
-                Featured
-            </h2>
-            
-            <div className="products__container grid">
-              {data.featuredProducts.map((item, index) => {
-                return(
-                    <Featured img={item.img} title={item.title} desc={item.desc} price={item.price} item={item} key={index}/>
-                )
-              })}
-            </div>
-          </section>
+          <Featured />
 
-          <Testimonials />
+          <MidBanner />
           
           <Products />
 

@@ -1,29 +1,55 @@
-import { useCart } from "react-use-cart";
-import toast, { Toaster } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import data from "../../data";
 
-const Featured = ({ img, title, price, item }) => {
-    const { addItem } = useCart();
+const Featured = () => {
+  const scrollLeft = () => {
+    const productList = document.querySelector('.featured-list');
+    productList.scrollLeft -= 100; // Adjust the scroll distance as needed
+  };
 
-   const add = () => (
-    toast.success('added to the cart.')
-   );
-   
+  const scrollRight = () => {
+    const productList = document.querySelector('.featured-list');
+    productList.scrollLeft += 100;
+  };
+
+
     return (
         <div>
-        <Toaster/>
-            <article className="featured__card">
-                <span className="featured__tag">Sale</span>
-                <Link to={`/productDetails/${item.id}`}>
-                    <img src={img} alt={title} className="featured__img"/>
-                </Link>
-                <div className="featured__data">
-                    <h3 className="featured__title">{title}</h3>
-                    <span className="featured__price">${price}</span>
+            <section className="featured section container" id="featured">
+                <h2 className="section__title">
+                    Our Best Seller
+                </h2>
+
+                <div className="featured-products">
+                    {/* <button className="scroll-button left" onClick={scrollLeft}>
+                        &lt; 
+                    </button> */}
+                    <div className="featured-list">
+
+                        {data.featuredProducts.map((item, index,) => {
+                            return(
+                                <article key={index} className="featured-card">
+
+                                    <span className="featured__tag">Sale</span>
+
+                                    <Link to={`/productDetails/${item.id}`}>
+                                        <img src={item.img} alt={item.title} className="featured__img"/>
+                                    </Link>
+
+                                    <div>
+                                        <h3 className="featured-title">{item.title}</h3>
+                                        <span>${item.price}</span>
+                                    </div>
+                                </article>
+                            ) 
+                        })}
+                    </div>  
+                    {/* <button className="scroll-button right" onClick={scrollRight}>
+                        &gt; 
+                    </button> */}
                 </div>
-                <button className="button featured__button" onClick={() =>addItem(item)} onMouseDown={() =>add()}>ADD TO CART</button>
-            </article>
-        </div>
+            </section>
+        </div> 
     );
 };
 

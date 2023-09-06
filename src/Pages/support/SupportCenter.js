@@ -1,6 +1,7 @@
 
 import New from '../home/New';
 import data from '../../data';
+import Featured from '../home/Featured'
 
 const SupportCenter = () => {
     return (
@@ -10,7 +11,9 @@ const SupportCenter = () => {
                 <h2 className="section__title">
                 Support Center
                 </h2>
-
+                <div>
+                    <Featured />
+                </div>
             </section>
 
             <div className="new__container">

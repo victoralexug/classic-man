@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import New from '../../Pages/home/New';
 import data from '../../data';
 import './cart.css';
+import Featured from '../../Pages/home/Featured';
 
 const Cart = () => {
     
@@ -31,40 +32,42 @@ const Cart = () => {
                 </div>
             )}
 
-           
-            {items.length >= 1 && items.map((item, index) => (
-            <div className='cart-content'> 
-            <p>Items : <span>({totalItems})</span></p>   
-            {items.length >= 1 && items.map((item, index) => (
-                <div className="cart-items" key={index}>
-                <br />
-                    <div className="cart-item">
-                        <img src={item.img} alt={item.title} />
-                        <div className="item-details">
-                            <div className='item-title'>
-                                <h2>{item.title}</h2>
-                                <p>Price: ${item.price}</p>
-                            </div>
-                            
-                            <div>
-                                <div className="cart__amount-content">
-                                    <span className="cart__amount-box">                                    
-                                    <i className='bx bx-minus' onClick={() => {item.quantity > 1 ? updateItemQuantity(item.id,item.quantity -1) : updateItemQuantity(item.id,item.quantity)}}></i>
-                                    </span>
 
-                                    <span className="cart__amount-number">{item.quantity}</span>
-                                    <span className="cart__amount-box">
-                                        <i className='bx bx-plus' onClick={() => updateItemQuantity(item.id,item.quantity +1)}></i>
-                                    </span>
+
+
+            <div className={items.length >= 1 ? 'cart-content' : ''}>
+            {items.length >= 1 && items.map((item, index) => ( 
+                <div>
+                    <p>Cart : <span>({totalItems})</span></p> 
+                    <div className="cart-items" key={index}>
+                        <br />
+                        <div className="cart-item">
+                            <img src={item.img} alt={item.title} />
+                            <div className="item-details">
+                                <div className='item-title'>
+                                    <h2>{item.title}</h2>
+                                    <p>Price: ${item.price}</p>
                                 </div>
-                                <button className="remove-button" onClick={() => removeItem(item.id)}>Remove</button>
+                                
+                                <div>
+                                    <div className="cart__amount-content">
+                                        <span className="cart__amount-box">                                    
+                                        <i className='bx bx-minus' onClick={() => {item.quantity > 1 ? updateItemQuantity(item.id,item.quantity -1) : updateItemQuantity(item.id,item.quantity)}}></i>
+                                        </span>
+
+                                        <span className="cart__amount-number">{item.quantity}</span>
+                                        <span className="cart__amount-box">
+                                            <i className='bx bx-plus' onClick={() => updateItemQuantity(item.id,item.quantity +1)}></i>
+                                        </span>
+                                    </div>
+                                    <button className="remove-button" onClick={() => removeItem(item.id)}>Remove</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div> 
+                    </div> 
+                </div>
             ))}
             </div>
-            ))}
 
 
             {items.length >= 1 && (
@@ -103,8 +106,9 @@ const Cart = () => {
             )}
         </div>
 
-        <br />
-        <br /><br /><br />
+        <div>
+            <Featured />
+        </div>
 
         <h2 className="section__title">
             You May Also Like
@@ -120,6 +124,7 @@ const Cart = () => {
                 </div>
             </div>
         </div>
+
     </div>  
         
   );

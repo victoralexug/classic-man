@@ -2,16 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useCart } from 'react-use-cart';
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
-import Login from './Login/Login';
+import Login from '../Login/Login';
+import './header.css';
 
 
 const Header = (props) => {
     const [showMenu, setshowMenu] = useState(false)
     const [showLogin, setshowLogin] = useState(false)
 
-    const {
-    totalUniqueItems,
-    } = useCart()
+    const { totalUniqueItems } = useCart()
 
     const [searchResults, setSearchResults] = useState([]);
   
@@ -22,19 +21,19 @@ const Header = (props) => {
         console.log('Searching for:', query);
     };
 
-    const [windowWidth, setWindowWidth] = useState(false)
 
-   const changeNavbar = () => {
-    if(window.innerWidth >= 767){
-        setWindowWidth(true)
-    }else{
-        setWindowWidth(false)
-    }
-   };
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    
+    const changeNavbar = () => {
+        setWindowWidth(window.innerWidth);
+    };
 
-   useEffect(() => {
-    changeNavbar();
-   }, [window.innerWidth])
+    useEffect(() => {
+        window.addEventListener('resize', changeNavbar);
+        return () => {
+            window.removeEventListener('resize', changeNavbar);
+        };
+    }, []);
 
     return (
         <div>                      
@@ -44,7 +43,7 @@ const Header = (props) => {
                         The Classic Man
                     </a>
 
-                    {windowWidth ? <SearchBar onSearch={handleSearch}/> : null}
+                    {windowWidth >= 767 && <SearchBar onSearch={handleSearch} />}
 
                     <div className={showMenu ? "nav__menu show-menu": "nav__menu"} id="nav-menu">
                         <ul className="nav__list">
@@ -97,7 +96,7 @@ const Header = (props) => {
                     </div>
                 </nav>
                 
-                {!windowWidth ? <SearchBar /> : null}
+                {windowWidth < 767 && <SearchBar onSearch={handleSearch} />}
             </header>
             {showLogin && <Login setshowLogin={setshowLogin}/>}
         </div>

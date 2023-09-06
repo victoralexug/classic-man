@@ -1,5 +1,5 @@
 import React from 'react';
-import './login.css'; // Import the CSS file for styling
+import './login.css';
 
 function Login({ setshowLogin }) {
     const handlereturn = () => {
@@ -20,7 +20,7 @@ function Login({ setshowLogin }) {
                 <br/>
                 <button type="button" className="cancel-button"  onClick={handlereturn}>cancel</button>
             </form>
-            <p>Don't have an account? <a href="https://victoralexug.github.io/victoralexug/">Sign up</a></p>
+            <p>Don't have an account? <a className='sign-up' href="https://victoralexug.github.io/victoralexug/">Sign up</a></p>
         </div>
     </div>
   );

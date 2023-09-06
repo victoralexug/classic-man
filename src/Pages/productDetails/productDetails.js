@@ -4,6 +4,7 @@ import data from "../../data";
 import { useCart } from "react-use-cart";
 import toast, { Toaster } from 'react-hot-toast';
 import New from "../home/New";
+import './productdetails.css';
 
 function ProductDetail() {
     const {itemId} = useParams()

@@ -1,5 +1,5 @@
 
-const Testimonials = () => {
+const MidBanner = () => {
     return (
         <div>
             <section className="testimonial section container">
@@ -18,4 +18,4 @@ const Testimonials = () => {
     );
 };
 
-export default Testimonials;
+export default MidBanner;
