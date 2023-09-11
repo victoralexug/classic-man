@@ -48,7 +48,7 @@
   }
   
   .shop-button:hover {
-    background-color: #ca790f;;
+    background-color: var(--hover-color);
   }
   
   .cart-items {
@@ -113,7 +113,7 @@
     margin-top: 1.5rem;
   }
   .remove-button:hover{
-    background-color: #be7412;
+    background-color: var(--hover-color);
   }
   
   .cart-summary {
@@ -176,7 +176,7 @@
   }
   
   .promo-button:hover {
-    background-color: #ca790f;
+    background-color: var(--hover-color);
   }
   
   .checkout-button {

@@ -13,12 +13,8 @@ const Main = () => {
    
     return (
       <div>
-          <section className="home" id="home">  
-            {data.homeData.map((item, index) => {
-              return(
-                  <Home img={item.img} first={item.first} title={item.title} link={item.link} desc={item.desc} price={item.price} item={item} key={index}/>
-              )
-            })}
+          <section className="home" id="home"> 
+              <Home />
           </section>
               
           <Featured />

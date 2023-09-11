@@ -5,10 +5,12 @@ import { useCart } from "react-use-cart";
 import toast, { Toaster } from 'react-hot-toast';
 import New from "../home/New";
 import './productdetails.css';
+import ProductImageGallery from './ProductImageGallery'
 
 function ProductDetail() {
     const {itemId} = useParams()
-    const thisProduct = data.productData.find(item => item.id === itemId)
+    const source = data.productData
+    const thisProduct = source.find(item => item.id === itemId)
     
     const { addItem } = useCart();
     const add = () => (
@@ -19,13 +21,13 @@ function ProductDetail() {
         <div>
             <Toaster/>
             <div className="product-details-container">
-                <div className="product-image">
-                    <img src={thisProduct.img} alt={thisProduct.title} />
-                </div>
-                <div className="product-info">
+                <div className="product-details-image">
+                    <ProductImageGallery images={thisProduct.images} source={source} />
+                </div> 
+                <div className="product-details-info">
                     <h1>{thisProduct.title}</h1>
-                    <p className="product-price">Price: ${thisProduct.price}</p>
-                    <p className="product-description">{thisProduct.desc}</p>
+                    <p className="product-details-price">Price: ${thisProduct.price}</p>
+                    <p className="product-details-description">{thisProduct.desc}</p>
                     <button onClick={() =>addItem(thisProduct)} onMouseDown={() =>add()} className="add-to-cart-button">Add to Cart</button>
                 </div>
             </div>

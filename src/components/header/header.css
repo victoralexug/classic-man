@@ -92,7 +92,7 @@
 }
 
 .search-button:hover {
-  background-color: #ca790f;
+  background-color: var(--hover-color);
 }
 
 .nav__btns {

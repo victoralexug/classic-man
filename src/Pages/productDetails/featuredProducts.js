@@ -4,10 +4,13 @@ import data from "../../data";
 import { useCart } from "react-use-cart";
 import toast, { Toaster } from 'react-hot-toast';
 import New from "../home/New";
+import './productdetails.css';
+import ProductImageGallery from './ProductImageGallery'
 
 function ProductDetail() {
     const {itemId} = useParams()
-    const thisProduct = data.featuredProducts.find(item => item.id === itemId)
+    const source = data.featuredProducts
+    const thisProduct = source.find(item => item.id === itemId)
     
     const { addItem } = useCart();
     const add = () => (
@@ -19,9 +22,9 @@ function ProductDetail() {
         <div>
             <Toaster/>
             <div className="product-details-container">
-                <div className="product-image">
-                    <img src={thisProduct.img} alt={thisProduct.title} />
-                </div>
+                <div className="product-details-image">
+                    <ProductImageGallery images={thisProduct.images} source={source} />
+                </div> 
                 <div className="product-info">
                     <h1>{thisProduct.title}</h1>
                     <p className="product-price">Price: ${thisProduct.price}</p>

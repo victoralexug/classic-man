@@ -42,7 +42,7 @@ const Cart = () => {
                     <div className="cart-items" key={index}>
                         <br />
                         <div className="cart-item">
-                            <img src={item.img} alt={item.title} />
+                            <img src={item.img[0]} alt={item.title} />
                             <div className="item-details">
                                 <div className='item-title'>
                                     <h2>{item.title}</h2>

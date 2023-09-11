@@ -21,9 +21,9 @@ const Featured = () => {
                 </h2>
 
                 <div className="featured-products">
-                    {/* <button className="scroll-button left" onClick={scrollLeft}>
+                    <button className="scroll-button left" onClick={scrollLeft}>
                         &lt; 
-                    </button> */}
+                    </button>
                     <div className="featured-list">
 
                         {data.featuredProducts.map((item, index,) => {
@@ -33,20 +33,20 @@ const Featured = () => {
                                     <span className="featured__tag">Sale</span>
 
                                     <Link to={`/productDetails/${item.id}`}>
-                                        <img src={item.img} alt={item.title} className="featured__img"/>
+                                        <img src={item.img[0]} alt={item.title} className="featured__img"/>
+                                    
+                                        <div>
+                                            <h3 className="featured-title">{item.title}</h3>
+                                            <span>${item.price}</span>
+                                        </div>
                                     </Link>
-
-                                    <div>
-                                        <h3 className="featured-title">{item.title}</h3>
-                                        <span>${item.price}</span>
-                                    </div>
                                 </article>
                             ) 
                         })}
                     </div>  
-                    {/* <button className="scroll-button right" onClick={scrollRight}>
+                    <button className="scroll-button right" onClick={scrollRight}>
                         &gt; 
-                    </button> */}
+                    </button>
                 </div>
             </section>
         </div> 
